@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitung Luas dan Keliling Lingkaran</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hitung Luas dan Keliling Lingkaran</h2>
+
+    <h2>Luas : π * r * r</h2>
+    <h2>Keliling :  2 * π  * r</h2>
+
+    <form>
+        <label for="radius">Masukkan Diameter atau Radius:</label>
+        <input type="number" id="radius" name="radius" min="1" placeholder="Masukkan nilai" onChange="calculate()">
+    </form>
+
+    <br>
+
+    <h3>Hasil Perhitungan:</h3>
+    <p id="hasil">Luas: 0, Keliling: 0</p>
+
+    <script>
+        function calculate() {
+           
+            let radiusInput = document.getElementById('radius');
+            let radiusValue = parseFloat(radiusInput.value); 
+
+            
+            let luas = 3.14 * radiusValue * radiusValue;
+            let Keliling = 2 * 3.14 * radiusValue;
+
+           
+            let hasil = document.getElementById('hasil');
+            hasil.innerHTML = `Luas: ${luas.toFixed(2)} , Keliling: ${Keliling.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
