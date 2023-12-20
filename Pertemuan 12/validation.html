@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <label for="">Name</label>
+        <input type="text" id="name" max="30" required>
+
+        <label for="">Email</label>
+        <input type="email" id="email" required>
+
+        <label for="">Departure Time</label>
+        <input type="datetime-local" id="date" required>
+
+        <label for="">Number of tickets</label>
+        <input type="number" max="10" id="ticket" required>
+
+        <button type="button" onclick="validation()">Submit</button>
+    </form>
+
+
+
+    <script>
+       function validation() {
+
+        let nama = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let tanggal = document.getElementById('date').value;
+        let tiket = document.getElementById('ticket').value;
+        tiket.innerHTML = parseInt(tiket);
+
+        if (nama === "aldinokhalifah" & email === "khalifahaldino@gmail.com" & tiket >= 1 && tiket <= 10) {
+            document.write(`<p>Nama: ${nama}</p>
+                            <p>Email: ${email}</p>
+                            <p>Tanggal : ${tanggal}</p>
+                            <p>Jumlah tiket: ${tiket}</p>`); 
+           
+        } else {
+            alert('Input yang anda masukkan tidak valid!');
+        }
+
+       }
+
+
+    </script>
+</body>
+</html>
